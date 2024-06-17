@@ -16,3 +16,6 @@ Converesely, if the classList is not present, the method will add the classList.
 ## showModal() method
 The show modal method populates a modal, or pop up dialogue box in the web browser.
 I used the showModal() method within a click eventListener inside of the todo form in confirm whether the changes should be discarded or cancelled.
+
+## preventDefault() method
+I used the .preventDefault() method alongside an event within a submit eventHandler to prevent the page from automatically reloading after submitting.
