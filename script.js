@@ -28,8 +28,14 @@ openTaskFormBtn.addEventListener("click", () => {
 });
 
 closeTaskFormBtn.addEventListener("click", () => {
-    confirmCloseDialog.showModal();
     const formInputsContainValues = titleInput.value || dateInput.value || descriptionInput.value;
+    confirmCloseDialog.showModal();
+    if (formInputsContainValues) {
+        confirmCloseDialog.showmodal();
+    } 
+    else {
+        reset();
+    }
 });
 
 cancelBtn.addEventListener("click", () => {
