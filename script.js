@@ -26,9 +26,13 @@ const addOrUpdateTask = () => {
     if (dataArrIndex === -1) {
         taskData.unshift(taskObj);
     };
+
+    updateTaskContainer();
+    reset();
 }
 
 const updateTaskContainer = () => {
+    tasksContainer.innerHTML = "";
     taskData.forEach(({ id, title, date, description }) => {
         (tasksContainer.innerHTML += `
         <div class="task" id="${id}"</div>
@@ -78,5 +82,5 @@ discardBtn.addEventListener("click", () => {
 
 taskForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    reset();
+    updateTaskContainer();
 });
