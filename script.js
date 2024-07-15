@@ -25,7 +25,10 @@ const addOrUpdateTask = () => {
 
     if (dataArrIndex === -1) {
         taskData.unshift(taskObj);
-    };
+    }
+    else {
+        taskData[dataArrIndex] = taskObj;
+    }
 
     updateTaskContainer();
     reset();
@@ -65,6 +68,7 @@ const editTask = (buttonEl) => {
     dateInput.value = currentTask.date;
     descriptionInput.value = currentTask.description;
     addOrUpdateTask.innerText = "Update Task";
+    taskForm.classList.toggle("hidden");
 }
 
 const reset = () => {
@@ -84,6 +88,7 @@ openTaskFormBtn.addEventListener("click", () => {
 closeTaskFormBtn.addEventListener("click", () => {
     const formInputsContainValues = titleInput.value || dateInput.value || descriptionInput.value;
     confirmCloseDialog.showModal();
+    const formInputValuesUpdated = titleInput.value != currentTask.title || dataInput.value != currentTask.date || descriptionInput.value != currentTask.description;
     if (formInputsContainValues) {
         confirmCloseDialog.showmodal();
     } 
