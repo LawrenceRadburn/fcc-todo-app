@@ -81,15 +81,15 @@ const reset = () => {
     };
 }
 
-openTaskFormBtn.addEventListener("click", () => {
+openTaskFormBtn.addEventListener("click", () => 
     taskForm.classList.toggle("hidden")
-});
+);
 
 closeTaskFormBtn.addEventListener("click", () => {
     const formInputsContainValues = titleInput.value || dateInput.value || descriptionInput.value;
     confirmCloseDialog.showModal();
     const formInputValuesUpdated = titleInput.value != currentTask.title || dataInput.value != currentTask.date || descriptionInput.value != currentTask.description;
-    if (formInputsContainValues) {
+    if (formInputsContainValues && formInputValuesUpdated) {
         confirmCloseDialog.showmodal();
     } 
     else {
