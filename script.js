@@ -57,6 +57,7 @@ const deleteTask = (buttonEl) => {
     )
     buttonEl.parentElement.remove();
     taskData.splice(dataArrIndex, 1);
+    localStorage.setItem("data", JSON.stringify(taskData));
 }
 
 const editTask = (buttonEl) => {
